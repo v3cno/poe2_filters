@@ -1,5 +1,6 @@
 # POE2 End-game Ranger filter 
-![image](https://github.com/user-attachments/assets/a67122ac-a91c-415f-a6e0-1af60207ff86)
+![image](https://github.com/user-attachments/assets/f53d012c-1ecf-44b6-8d18-9e43dc99879c)
+
 
 This is a filter designed for End-game Rangers for Path of Exile 
 Features:
