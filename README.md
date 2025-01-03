@@ -7,10 +7,11 @@ Features:
 * Highlights valuable drops (Rares)
 * Hides outleveled gear
 * Sound, light beams and fontsizes for valuables
-* Highlight for runes, jewels and high level gems
+* Highlight for runes, jewels level gems and jewelery
+* Mark items for salvage with green border
 
 
 # HOW TO INSTALL
-* Download the latest release from github.
-* Place v3cno EndgameRanger.filter file into the following folder:
+* Download the filter you want to use.
+* Place *.filter file into the following folder:
   * `%userprofile%\Documents\My Games\Path of Exile 2`

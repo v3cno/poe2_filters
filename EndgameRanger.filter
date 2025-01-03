@@ -1,5 +1,5 @@
 #--------------------------
-# Max Lvl Ranger Filters
+# Endgame Ranger filter
 #--------------------------
 # Overrides - Uniques, Valuables
 #--------------------------
@@ -13,144 +13,6 @@ PlayAlertSound 3 300
 PlayEffect Brown
 MinimapIcon 1 Brown Star
 SetFontSize 32
-
-## Divine Orb Style
-Show
-Class "Currency"
-BaseType "Mirror" "Divine" "Perfect Jeweller's Orb"
-SetFontSize 35
-SetTextColor 255 0 0 255
-SetBorderColor 255 0 0 255
-SetBackgroundColor 255 255 255 255
-PlayAlertSound 6 300
-PlayEffect Red
-MinimapIcon 0 Red Star
-
-Show
-BaseType == "Distilled Isolation" "Distilled Suffering"
-SetFontSize 35
-SetTextColor 255 0 0 255
-SetBorderColor 255 0 0 255
-SetBackgroundColor 255 255 255 255
-PlayAlertSound 6 300
-PlayEffect Red
-MinimapIcon 0 Red Star
-
-
-#--------------------------
-# Gold
-#--------------------------
-
-Show
-AreaLevel >= 70
-StackSize >= 1000
-BaseType == "Gold"
-SetTextColor 255 255 255
-SetBorderColor 255 255 255
-PlayEffect Orange Temp
-SetFontSize 25
-
-Show
-AreaLevel < 70
-StackSize >= 500
-BaseType == "Gold"
-SetTextColor 255 255 255
-SetBorderColor 255 255 255
-PlayEffect Orange Temp
-SetFontSize 25
-
-Show
-BaseType == "Gold"
-SetTextColor 180 180 180
-SetBorderColor 0 0 0 255
-SetBackgroundColor 0 0 0 180
-SetFontSize 25
-
-#--------------------------
-# Uncut Gems
-#--------------------------
-
-# Always make Spirit gems pop
-Show
-BaseType "Uncut Spirit Gem"
-SetTextColor 20 240 240
-SetBorderColor 20 240 240
-PlayAlertSound 2 300
-PlayEffect Cyan
-MinimapIcon 1 Cyan Triangle
-SetFontSize 33
-
-# Make support gems pop during campaign
-# Show
-# AreaLevel < 68
-# BaseType "Uncut Support Gem"
-# SetTextColor 20 240 240
-# SetBorderColor 20 240 240
-# PlayAlertSound 2 300
-# PlayEffect Cyan
-# MinimapIcon 1 Cyan Triangle
-# SetFontSize 33
-
-# Make skill gems pop during campaign
-# Show
-# AreaLevel < 65
-# BaseType "Uncut Skill Gem"
-# SetTextColor 20 240 240
-# SetBorderColor 20 240 240
-# PlayAlertSound 2 300
-# PlayEffect Cyan
-# MinimapIcon 1 Cyan Triangle
-# SetFontSize 33
-
-# Show
-# ItemLevel <= 18
-# BaseType "Uncut Skill Gem"
-# SetTextColor 20 240 240
-# SetBorderColor 20 240 240
-# SetFontSize 35
-
-#--------------------------
-# Hide Support Gem
-#--------------------------
-Hide
-BaseType "Uncut Support Gem"
-
-# Show Support Gems
-# Show
-# BaseType "Uncut Support Gem"
-# SetTextColor 20 240 240
-# SetBorderColor 20 240 240
-# SetFontSize 35
-#--------------------------
-
-# Level 19 gems and up in maps get a special highlight
-Show
-ItemLevel > 18
-BaseType "Uncut Skill Gem"
-SetTextColor 20 240 240
-SetBorderColor 20 240 240
-PlayAlertSound 2 300
-PlayEffect Cyan
-MinimapIcon 1 Cyan Triangle
-SetFontSize 33
-
-Hide
-BaseType "Uncut Skill Gem"
-ItemLevel < 19
-
-#--------------------------
-# Socketables and Special Character Equipment
-#--------------------------
-
-# Special A Tier - League specific socketables and jewels
-Show 
-BaseType "Soul Core" "Timeless"
-SetTextColor 0 240 190
-SetBorderColor 0 240 190
-SetFontSize 35
-MinimapIcon 0 Cyan Diamond
-PlayAlertSound 2 300
-PlayEffect Cyan
 
 # Special Highlight - Breach Rings
 Show 
@@ -171,7 +33,115 @@ SetFontSize 35
 MinimapIcon 2 Cyan Diamond
 PlayEffect Cyan Temp
 
-# Special A Tier - Sanctum Relics
+# Gold
+#--------------------------
+Show
+AreaLevel >= 65
+StackSize >= 500
+BaseType == "Gold"
+SetTextColor 255 255 255
+SetBorderColor 255 255 255
+PlayEffect Orange Temp
+SetFontSize 25
+
+Show
+BaseType == "Gold"
+SetTextColor 180 180 180
+SetBorderColor 0 0 0 255
+SetBackgroundColor 0 0 0 180
+SetFontSize 25
+
+# Uncut Gems
+#--------------------------
+
+# High Level Spirit Gem
+Show
+ItemLevel > 18
+BaseType "Uncut Spirit Gem"
+SetTextColor 20 240 240
+SetBorderColor 20 240 240
+PlayAlertSound 2 300
+PlayEffect Cyan
+MinimapIcon 1 Cyan Triangle
+SetFontSize 33
+
+Hide
+AreaLevel >= 78
+ItemLevel < 19
+BaseType "Uncut Spirit Gem"
+
+# Support Gems
+#--------------------------
+
+# Show Support Gems
+# Show
+# BaseType "Uncut Support Gem"
+# SetTextColor 20 240 240
+# SetBorderColor 20 240 240
+# SetFontSize 35
+
+Hide
+BaseType "Uncut Support Gem"
+
+# Campaign Support Gems || Uncomment for these to be enabled
+# Show
+# AreaLevel < 68
+# BaseType "Uncut Support Gem"
+# SetTextColor 20 240 240
+# SetBorderColor 20 240 240
+# PlayAlertSound 2 300
+# PlayEffect Cyan
+# MinimapIcon 1 Cyan Triangle
+# SetFontSize 33
+
+# Skill Gems
+#--------------------------
+
+# Campaign Skill Gems
+# Show
+# AreaLevel < 65
+# BaseType "Uncut Skill Gem"
+# SetTextColor 20 240 240
+# SetBorderColor 20 240 240
+# PlayAlertSound 2 300
+# PlayEffect Cyan
+# MinimapIcon 1 Cyan Triangle
+# SetFontSize 33
+
+# Show
+# ItemLevel <= 18
+# BaseType "Uncut Skill Gem"
+# SetTextColor 20 240 240
+# SetBorderColor 20 240 240
+# SetFontSize 35
+
+Show
+ItemLevel > 18
+BaseType "Uncut Skill Gem"
+SetTextColor 20 240 240
+SetBorderColor 20 240 240
+PlayAlertSound 2 300
+PlayEffect Cyan
+MinimapIcon 1 Cyan Triangle
+SetFontSize 33
+
+Hide
+BaseType "Uncut Skill Gem"
+ItemLevel < 19
+
+#--------------------------
+# Special items
+#--------------------------
+
+Show 
+BaseType "Soul Core" "Timeless"
+SetTextColor 0 240 190
+SetBorderColor 0 240 190
+SetFontSize 35
+MinimapIcon 0 Cyan Diamond
+PlayAlertSound 2 300
+PlayEffect Cyan
+
 Show 
 Class "Relic"
 SetTextColor 0 240 190
@@ -181,7 +151,6 @@ MinimapIcon 1 Cyan Diamond
 PlayAlertSound 2 300
 PlayEffect Cyan
 
-# Special A Tier - Rare Jewels
 Show
 Class "Jewel"
 Rarity <= Rare
@@ -192,58 +161,56 @@ MinimapIcon 1 Cyan Diamond
 PlayEffect Cyan
 PlayAlertSound 2 300
 
-# Special B Tier - Any Runes and Charms
 Show 
 BaseType " Rune"
 SetTextColor 0 240 190
 PlayEffect Cyan Temp
 
-#--------------------------
-# Scroll of Wisdom High Level Hiding
-#--------------------------
 
+# Hide Scroll of Wisdom
 Hide
 BaseType "Scroll of Wisdom"
 AreaLevel >= 65
 Rarity <= Magic
 
 #--------------------------
-# Socketables and Special Character Equipment
+# Currency
 #--------------------------
-
-# Currency Tier A: Gemcutter, Annullment
+# Currency: Divine Orb / Mirror
 Show
 Class "Currency"
-BaseType "Orb of Annulment" "Orb of Chance" "Greater Jeweller's Orb" "Distilled Fear" "Distilled Despair"
-SetTextColor 255 255 255 255
+BaseType "Mirror" "Divine" "Perfect Jeweller's Orb"
+SetFontSize 35
+SetTextColor 255 0 0 255
+SetBorderColor 255 0 0 255
+SetBackgroundColor 255 255 255 255
+PlayAlertSound 6 300
+PlayEffect Red
+MinimapIcon 0 Red Star
+
+# Currency: Orb of Annulment
+Show
+Class "Currency"
+BaseType "Orb of Annulment"
+SetTextColor 0 0 0 255
 SetBorderColor 255 255 255 255
-SetBackgroundColor 240 90 35
+SetBackgroundColor 255 255 255
 PlayAlertSound 1 300
 PlayEffect White
 MinimapIcon 1 Yellow Circle
 SetFontSize 35
 
-# Currency Tier B: Exalt
+# Currency: Exalt
 Show
 Class "Currency"
-BaseType "Exotic Coinage" "Exalted Orb"
+BaseType "Exalted Orb"
 SetTextColor 255 255 255 255
 SetBorderColor 255 255 255 255
-SetBackgroundColor 255 128 0 160
+SetBackgroundColor 255 105 0 175
 PlayAlertSound 10 300
 PlayEffect Orange
 MinimapIcon 1 Orange Circle
 SetFontSize 33
-
-Show
-BaseType "Gold Key" "Silver Key" "Bronze Key"
-SetTextColor 255 207 132
-SetBorderColor 255 207 132
-SetBackgroundColor 76 51 12
-PlayAlertSound 2 300
-PlayEffect White
-MinimapIcon 2 White Circle
-SetFontSize 30
 
 # Currency: Vaal
 Show
@@ -251,8 +218,8 @@ Class "Currency"
 BaseType "Vaal Orb"
 SetTextColor 255 255 255 255
 SetBorderColor 255 0 0
-SetBackgroundColor 255 0 0 150
-PlayAlertSound 2 300
+SetBackgroundColor 255 0 0 175
+PlayAlertSound 5 200
 PlayEffect Red
 MinimapIcon 1 Red Circle
 SetFontSize 33
@@ -263,8 +230,8 @@ Class "Currency"
 BaseType "Orb of Alchemy"
 SetTextColor 255 255 255 255
 SetBorderColor 50 205 50
-SetBackgroundColor 50 205 50 150
-PlayAlertSound 2 300
+SetBackgroundColor 50 205 50 175
+PlayAlertSound 13 300
 PlayEffect Green
 MinimapIcon 1 Green Circle
 SetFontSize 33
@@ -273,17 +240,28 @@ SetFontSize 33
 Show
 Class "Currency"
 BaseType "Chaos Orb"
-SetTextColor 255 255 255 255
+SetTextColor 0 0 0 255
 SetBorderColor 255 255 0
-SetBackgroundColor 255 255 0 150
-PlayAlertSound 2 300
+SetBackgroundColor 255 255 0 175
+PlayAlertSound 16 300
 PlayEffect Yellow
 MinimapIcon 1 Yellow Circle
 SetFontSize 33
 
 Show
 Class "Currency"
-BaseType "Gemcutter's Prism" "Lesser Jeweller's Orb" "Regal Orb" "Artificer's Orb" "Glassblower's Bauble"
+BaseType "Orb of Chance" "Greater Jeweller's Orb" "Distilled Fear" "Distilled Despair"
+SetTextColor 255 255 255 255
+SetBorderColor 255 255 255 255
+SetBackgroundColor 240 90 35
+PlayAlertSound 1 300
+PlayEffect White
+MinimapIcon 1 Yellow Circle
+SetFontSize 35
+
+Show
+Class "Currency"
+BaseType "Gemcutter's Prism" "Lesser Jeweller's Orb" "Regal Orb" "Artificer's Orb" "Glassblower's Bauble" "Exotic Coinage" 
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
@@ -291,6 +269,26 @@ PlayAlertSound 2 300
 PlayEffect White
 MinimapIcon 2 White Circle
 SetFontSize 35
+
+Show
+BaseType == "Distilled Isolation" "Distilled Suffering"
+SetFontSize 35
+SetTextColor 255 0 0 255
+SetBorderColor 255 0 0 255
+SetBackgroundColor 255 255 255 255
+PlayAlertSound 6 300
+PlayEffect Red
+MinimapIcon 0 Red Star
+
+Show
+BaseType "Gold Key" "Silver Key" "Bronze Key"
+SetTextColor 255 207 132
+SetBorderColor 255 207 132
+SetBackgroundColor 76 51 12
+PlayAlertSound 2 300
+PlayEffect White
+MinimapIcon 2 White Circle
+SetFontSize 30
 
 Show
 Class "Currency"
@@ -308,7 +306,7 @@ Class "Currency"
 BaseType "Breach Splinter" "Catalyst"
 SetTextColor 255 255 255
 SetBorderColor 255 0 255
-SetBackgroundColor 255 0 255 60
+SetBackgroundColor 255 0 255 120
 PlayAlertSound 2 100
 PlayEffect Purple Temp
 MinimapIcon 1 Purple Kite
@@ -336,15 +334,22 @@ PlayEffect White
 MinimapIcon 2 White Circle
 SetFontSize 30
 
-# Currency Tier C: Vaal, Chaos, Exalt, Exotic
 Show
 AreaLevel >= 70
 Class "Currency"
-BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard" "Chance Shard"
+BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard"
 SetTextColor 220 190 132
+SetBorderColor 220 190 132
 SetFontSize 29
 
-# Currency Tier C: Vaal, Chaos, Exalt, Exotic
+Show
+AreaLevel >= 70
+Class "Currency"
+BaseType "Chance Shard"
+SetTextColor 175 96 37 255
+SetBorderColor 175 96 37 200
+SetFontSize 29
+
 Show
 Class "Currency"
 BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard" "Chance Shard"
@@ -402,8 +407,8 @@ SetFontSize 33
 
 Hide
 BaseType "Waystone"
-WaystoneTier < 10
-AreaLevel > 77
+WaystoneTier < 13
+AreaLevel > 75
 
 Show
 BaseType "Waystone"
@@ -435,12 +440,16 @@ MinimapIcon 1 Yellow Diamond
 Show
 Rarity Normal
 Class "Rings" "Amulets" "Belts"
+SetTextColor 204 255 153
 SetFontSize 32
+PlayEffect White
 
 Show
 Class "Rings" "Amulets" "Belts"
 Rarity Magic
-SetFontSize 30
+SetTextColor 51 255 255
+SetFontSize 32
+PlayEffect Cyan
 
 #--------------------------
 # Rares
@@ -472,6 +481,7 @@ AreaLevel > 70
 Rarity <= Magic
 Class "Flasks"
 
+#--------------------------
 # High Level Area Items
 #--------------------------
 Hide
@@ -520,4 +530,4 @@ BaseType == "Expert Cultist Bow"
 Hide
 AreaLevel >= 65
 Rarity <= Magic
-Class "Flasks" "Body Armours" "Helmets" "Gloves" "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Staves" "Crossbows" "Wands" "Sceptres" "Charms"
+Class "Flasks" "Body Armours" "Helmets" "Gloves" "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Crossbows" "Wands" "Sceptres" "Charms"
